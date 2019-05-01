@@ -152,10 +152,38 @@
         AAAAAQAAAAAAAAAAAAAAAAwAAAAADgAA2BMAANgTAAAL
 </value>
   </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Main Database Charts (only put link's base part eg. "https://example.com/blablabla/whatever/" - no quotation marks, 
+it means that charts (for ex. EDDF) will be downloaded from https://example.com/blablabla/whatever/EDDF.pdf )</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>                                                                        To properly assign 
+                                                                        exceptions use this
+                                                                        structure:
+XXXX;ST:https://example.com/blablabla/XXXX.pdf:END@
+
+                                                                        XXXX - ICAO
+                                                                                          identifier
+
+                                                                        Credentials to use:
+                                                                        If you're not using,
+                                                                        just leave empty.
+                                                                        Your credentials 
+                                                                        will be saved as plain
+                                                                        text in config file!
+                                                                        User:
+
+                                                                        
+                                                                        Password:
+ </value>
+  </data>
   <metadata name="tmr_time.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>117, 17</value>
+  </metadata>
+  <metadata name="openFileDialog2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>257, 17</value>
   </metadata>
 </root>

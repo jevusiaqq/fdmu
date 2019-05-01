@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.IO;
 using System.Net;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
@@ -199,6 +200,26 @@ namespace addons
         }
         #endregion
 
+        #region Cut to line end string function
+
+        public static string CutEnd(string main, string parameter)
+        {
+            try
+            {
+                return main.Substring(main.IndexOf(parameter) + parameter.Length, main.IndexOf("\r\n", main.IndexOf(parameter)) - main.IndexOf(parameter) - parameter.Length);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error while loading config. See log.", "EFB message");
+                LogAppend("Tried to parse config, but failed with error: " + ex.Message + "\r\nMore: " + ex.ToString());
+                return "-1";
+            }
+            
+
+        }
+
+        #endregion
+
         #region Client Object
 
         public struct VClient
@@ -222,7 +243,62 @@ namespace addons
 
         #endregion
 
+        #region Config Object
 
+        public struct Config
+        {
+            public int selFunction;//
+            public string flightPlanLink;//
+            public string AIPLink;
+            public string filePlanLink;
+            public string VATSIMtfc;
+            public string IVAOtfc;
+            public string mainDB;
+            public string Exceptions;
+            public bool printFlag;//
+            public string user;
+            public string password;
+
+            public bool Load(string path)
+            {
+                try
+                {
+                    string s = File.ReadAllText(path);
+                    selFunction = int.Parse(s.Substring(s.IndexOf("selectedFunction=") + "selectedFunction=".Length, 1));
+                    printFlag = bool.Parse(CutEnd(s, "printFlag="));
+                    flightPlanLink = CutEnd(s, "flightPlanLink=");
+                    AIPLink = CutEnd(s, "AIPLink=");
+                    filePlanLink = CutEnd(s, "filePlanLink=");
+                    VATSIMtfc = CutEnd(s, "VATSIMtfc=");
+                    IVAOtfc = CutEnd(s, "IVAOtfc=");
+                    mainDB = CutEnd(s, "mainDB=");
+                    user = CutEnd(s, "user=");
+                    password = CutEnd(s, "password=");
+                    Exceptions = s.Substring(s.IndexOf("Exceptions=") + "Exceptions=".Length, s.IndexOf("@EXEND@") - "\r\n".Length -( s.IndexOf("Exceptions=") + "Exceptions=".Length));
+                    LogAppend("Settings loaded successfully");
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error while loading config. See log.", "EFB message");
+                    LogAppend("Tried to load config from: " + path + " but failed with error: " + ex.Message + "\r\nMore: " + ex.ToString());
+                    return false;
+                }
+
+
+    }
+        }
+
+        #endregion
+
+        #region Log Queries
+
+        public static void LogAppend(string logQuery)
+        {
+            File.AppendAllText(@Directory.GetCurrentDirectory() + "\\fdmu_log.txt", DateTime.Now.ToString("HH:mm:ss")+">> "+ logQuery+"\r\n");
+        }
+
+        #endregion
 
     }
 }

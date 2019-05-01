@@ -72,12 +72,14 @@
             this.button21 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.pdf_chcstm = new AxAcroPDFLib.AxAcroPDF();
-            this.loadsheet = new System.Windows.Forms.TabPage();
+            this.loadsheetpdf = new System.Windows.Forms.TabPage();
             this.button24 = new System.Windows.Forms.Button();
             this.pdf_loadsheet = new AxAcroPDFLib.AxAcroPDF();
+            this.loadsheetweb = new System.Windows.Forms.TabPage();
+            this.loadsheetwebSite = new Awesomium.Windows.Forms.WebControl(this.components);
             this.rtemap = new System.Windows.Forms.TabPage();
             this.vatsimtfc = new System.Windows.Forms.TabPage();
-            this.webControl1 = new Awesomium.Windows.Forms.WebControl(this.components);
+            this.vtsmWeb = new Awesomium.Windows.Forms.WebControl(this.components);
             this.ivaotfc = new System.Windows.Forms.TabPage();
             this.metardep = new System.Windows.Forms.TabPage();
             this.txt_metdep = new System.Windows.Forms.TextBox();
@@ -91,9 +93,35 @@
             this.arptinfo = new System.Windows.Forms.TabPage();
             this.filefp = new System.Windows.Forms.TabPage();
             this.atis = new System.Windows.Forms.TabPage();
+            this.btn_print = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
             this.txt_atis = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.settings = new System.Windows.Forms.TabPage();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.txt_password = new System.Windows.Forms.TextBox();
+            this.txt_user = new System.Windows.Forms.TextBox();
+            this.button28 = new System.Windows.Forms.Button();
+            this.button27 = new System.Windows.Forms.Button();
+            this.button26 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txt_excCharts = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txt_dbmain = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.txt_ivao = new System.Windows.Forms.TextBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.txt_vatsim = new System.Windows.Forms.TextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.txt_filefp = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txt_aip = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txt_genLink = new System.Windows.Forms.TextBox();
+            this.btn_web = new System.Windows.Forms.Button();
+            this.btn_pdf = new System.Windows.Forms.Button();
             this.tmr_time = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -103,6 +131,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.dataPanel.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -114,13 +143,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.pdf_charr)).BeginInit();
             this.chcstm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pdf_chcstm)).BeginInit();
-            this.loadsheet.SuspendLayout();
+            this.loadsheetpdf.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pdf_loadsheet)).BeginInit();
+            this.loadsheetweb.SuspendLayout();
             this.vatsimtfc.SuspendLayout();
             this.metardep.SuspendLayout();
             this.metararr.SuspendLayout();
             this.metarcstm.SuspendLayout();
             this.atis.SuspendLayout();
+            this.settings.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -386,7 +423,8 @@
             this.mainPanel.Controls.Add(this.chdep);
             this.mainPanel.Controls.Add(this.charr);
             this.mainPanel.Controls.Add(this.chcstm);
-            this.mainPanel.Controls.Add(this.loadsheet);
+            this.mainPanel.Controls.Add(this.loadsheetpdf);
+            this.mainPanel.Controls.Add(this.loadsheetweb);
             this.mainPanel.Controls.Add(this.rtemap);
             this.mainPanel.Controls.Add(this.vatsimtfc);
             this.mainPanel.Controls.Add(this.ivaotfc);
@@ -396,6 +434,7 @@
             this.mainPanel.Controls.Add(this.arptinfo);
             this.mainPanel.Controls.Add(this.filefp);
             this.mainPanel.Controls.Add(this.atis);
+            this.mainPanel.Controls.Add(this.settings);
             this.mainPanel.Location = new System.Drawing.Point(151, -35);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.SelectedIndex = 0;
@@ -632,16 +671,16 @@
             this.pdf_chcstm.Size = new System.Drawing.Size(1198, 619);
             this.pdf_chcstm.TabIndex = 2;
             // 
-            // loadsheet
+            // loadsheetpdf
             // 
-            this.loadsheet.Controls.Add(this.button24);
-            this.loadsheet.Controls.Add(this.pdf_loadsheet);
-            this.loadsheet.Location = new System.Drawing.Point(4, 22);
-            this.loadsheet.Name = "loadsheet";
-            this.loadsheet.Size = new System.Drawing.Size(1204, 652);
-            this.loadsheet.TabIndex = 4;
-            this.loadsheet.Text = "rtefind";
-            this.loadsheet.UseVisualStyleBackColor = true;
+            this.loadsheetpdf.Controls.Add(this.button24);
+            this.loadsheetpdf.Controls.Add(this.pdf_loadsheet);
+            this.loadsheetpdf.Location = new System.Drawing.Point(4, 22);
+            this.loadsheetpdf.Name = "loadsheetpdf";
+            this.loadsheetpdf.Size = new System.Drawing.Size(1204, 652);
+            this.loadsheetpdf.TabIndex = 4;
+            this.loadsheetpdf.Text = "rtefind";
+            this.loadsheetpdf.UseVisualStyleBackColor = true;
             // 
             // button24
             // 
@@ -667,6 +706,24 @@
             this.pdf_loadsheet.Size = new System.Drawing.Size(1198, 619);
             this.pdf_loadsheet.TabIndex = 6;
             // 
+            // loadsheetweb
+            // 
+            this.loadsheetweb.Controls.Add(this.loadsheetwebSite);
+            this.loadsheetweb.Location = new System.Drawing.Point(4, 22);
+            this.loadsheetweb.Name = "loadsheetweb";
+            this.loadsheetweb.Size = new System.Drawing.Size(1204, 652);
+            this.loadsheetweb.TabIndex = 15;
+            this.loadsheetweb.Text = "tabPage1";
+            this.loadsheetweb.UseVisualStyleBackColor = true;
+            // 
+            // loadsheetwebSite
+            // 
+            this.loadsheetwebSite.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.loadsheetwebSite.Location = new System.Drawing.Point(0, 0);
+            this.loadsheetwebSite.Size = new System.Drawing.Size(1204, 652);
+            this.loadsheetwebSite.Source = new System.Uri("about:blank", System.UriKind.Absolute);
+            this.loadsheetwebSite.TabIndex = 1;
+            // 
             // rtemap
             // 
             this.rtemap.Location = new System.Drawing.Point(4, 22);
@@ -678,7 +735,7 @@
             // 
             // vatsimtfc
             // 
-            this.vatsimtfc.Controls.Add(this.webControl1);
+            this.vatsimtfc.Controls.Add(this.vtsmWeb);
             this.vatsimtfc.Location = new System.Drawing.Point(4, 22);
             this.vatsimtfc.Name = "vatsimtfc";
             this.vatsimtfc.Size = new System.Drawing.Size(1204, 652);
@@ -686,14 +743,14 @@
             this.vatsimtfc.Text = "b";
             this.vatsimtfc.UseVisualStyleBackColor = true;
             // 
-            // webControl1
+            // vtsmWeb
             // 
-            this.webControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webControl1.Location = new System.Drawing.Point(0, 0);
-            this.webControl1.Size = new System.Drawing.Size(1204, 652);
-            this.webControl1.Source = new System.Uri("https://accumap-project.com/", System.UriKind.Absolute);
-            this.webControl1.TabIndex = 0;
-            this.webControl1.ShowCreatedWebView += new Awesomium.Core.ShowCreatedWebViewEventHandler(this.Awesomium_Windows_Forms_WebControl_ShowCreatedWebView);
+            this.vtsmWeb.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vtsmWeb.Location = new System.Drawing.Point(0, 0);
+            this.vtsmWeb.Size = new System.Drawing.Size(1204, 652);
+            this.vtsmWeb.Source = new System.Uri("https://accumap-project.com/", System.UriKind.Absolute);
+            this.vtsmWeb.TabIndex = 0;
+            this.vtsmWeb.ShowCreatedWebView += new Awesomium.Core.ShowCreatedWebViewEventHandler(this.Awesomium_Windows_Forms_WebControl_ShowCreatedWebView);
             // 
             // ivaotfc
             // 
@@ -716,12 +773,15 @@
             // 
             // txt_metdep
             // 
+            this.txt_metdep.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_metdep.Enabled = false;
             this.txt_metdep.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_metdep.Location = new System.Drawing.Point(3, 19);
             this.txt_metdep.Multiline = true;
             this.txt_metdep.Name = "txt_metdep";
-            this.txt_metdep.Size = new System.Drawing.Size(1198, 648);
+            this.txt_metdep.Size = new System.Drawing.Size(1198, 629);
             this.txt_metdep.TabIndex = 0;
             // 
             // metararr
@@ -736,12 +796,15 @@
             // 
             // txt_metarr
             // 
+            this.txt_metarr.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_metarr.Enabled = false;
             this.txt_metarr.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_metarr.Location = new System.Drawing.Point(3, 18);
             this.txt_metarr.Multiline = true;
             this.txt_metarr.Name = "txt_metarr";
-            this.txt_metarr.Size = new System.Drawing.Size(1198, 648);
+            this.txt_metarr.Size = new System.Drawing.Size(1198, 631);
             this.txt_metarr.TabIndex = 1;
             // 
             // metarcstm
@@ -759,6 +822,8 @@
             // 
             // txt_metcstm_input
             // 
+            this.txt_metcstm_input.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_metcstm_input.Location = new System.Drawing.Point(386, 18);
             this.txt_metcstm_input.MaxLength = 4;
             this.txt_metcstm_input.Name = "txt_metcstm_input";
@@ -768,6 +833,7 @@
             // 
             // button23
             // 
+            this.button23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button23.Location = new System.Drawing.Point(523, 17);
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(340, 23);
@@ -789,12 +855,15 @@
             // 
             // txt_metcstm
             // 
+            this.txt_metcstm.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_metcstm.Enabled = false;
             this.txt_metcstm.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_metcstm.Location = new System.Drawing.Point(3, 44);
             this.txt_metcstm.Multiline = true;
             this.txt_metcstm.Name = "txt_metcstm";
-            this.txt_metcstm.Size = new System.Drawing.Size(1198, 622);
+            this.txt_metcstm.Size = new System.Drawing.Size(1198, 605);
             this.txt_metcstm.TabIndex = 1;
             // 
             // arptinfo
@@ -817,6 +886,7 @@
             // 
             // atis
             // 
+            this.atis.Controls.Add(this.btn_print);
             this.atis.Controls.Add(this.button25);
             this.atis.Controls.Add(this.txt_atis);
             this.atis.Controls.Add(this.comboBox1);
@@ -827,12 +897,25 @@
             this.atis.Text = "tabPage1";
             this.atis.UseVisualStyleBackColor = true;
             // 
+            // btn_print
+            // 
+            this.btn_print.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_print.BackColor = System.Drawing.Color.Crimson;
+            this.btn_print.Font = new System.Drawing.Font("AirbusDisp2", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_print.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_print.Location = new System.Drawing.Point(524, 524);
+            this.btn_print.Name = "btn_print";
+            this.btn_print.Size = new System.Drawing.Size(247, 117);
+            this.btn_print.TabIndex = 3;
+            this.btn_print.Text = "do not print";
+            this.btn_print.UseVisualStyleBackColor = false;
+            this.btn_print.Click += new System.EventHandler(this.Button26_Click);
+            // 
             // button25
             // 
-            this.button25.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button25.Font = new System.Drawing.Font("AirbusDisp2", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button25.Location = new System.Drawing.Point(271, 546);
+            this.button25.Location = new System.Drawing.Point(271, 524);
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(247, 117);
             this.button25.TabIndex = 2;
@@ -849,7 +932,7 @@
             this.txt_atis.Location = new System.Drawing.Point(271, 19);
             this.txt_atis.Multiline = true;
             this.txt_atis.Name = "txt_atis";
-            this.txt_atis.Size = new System.Drawing.Size(928, 521);
+            this.txt_atis.Size = new System.Drawing.Size(928, 499);
             this.txt_atis.TabIndex = 1;
             // 
             // comboBox1
@@ -859,11 +942,274 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.comboBox1.Font = new System.Drawing.Font("AirbusDisp2", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(7, 19);
+            this.comboBox1.Location = new System.Drawing.Point(3, 25);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(258, 644);
+            this.comboBox1.Size = new System.Drawing.Size(258, 616);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
+            // 
+            // settings
+            // 
+            this.settings.Controls.Add(this.groupBox8);
+            this.settings.Controls.Add(this.groupBox7);
+            this.settings.Controls.Add(this.groupBox6);
+            this.settings.Controls.Add(this.groupBox5);
+            this.settings.Controls.Add(this.groupBox4);
+            this.settings.Controls.Add(this.groupBox3);
+            this.settings.Location = new System.Drawing.Point(4, 22);
+            this.settings.Name = "settings";
+            this.settings.Size = new System.Drawing.Size(1204, 652);
+            this.settings.TabIndex = 14;
+            this.settings.Text = "settings";
+            this.settings.UseVisualStyleBackColor = true;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox8.Controls.Add(this.txt_password);
+            this.groupBox8.Controls.Add(this.txt_user);
+            this.groupBox8.Controls.Add(this.button28);
+            this.groupBox8.Controls.Add(this.button27);
+            this.groupBox8.Controls.Add(this.button26);
+            this.groupBox8.Controls.Add(this.label9);
+            this.groupBox8.Controls.Add(this.txt_excCharts);
+            this.groupBox8.Controls.Add(this.label8);
+            this.groupBox8.Controls.Add(this.txt_dbmain);
+            this.groupBox8.Controls.Add(this.label10);
+            this.groupBox8.Location = new System.Drawing.Point(477, 25);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(727, 623);
+            this.groupBox8.TabIndex = 4;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Charts Database Settings";
+            // 
+            // txt_password
+            // 
+            this.txt_password.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_password.Location = new System.Drawing.Point(612, 272);
+            this.txt_password.Name = "txt_password";
+            this.txt_password.Size = new System.Drawing.Size(100, 20);
+            this.txt_password.TabIndex = 9;
+            // 
+            // txt_user
+            // 
+            this.txt_user.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_user.Location = new System.Drawing.Point(612, 233);
+            this.txt_user.Name = "txt_user";
+            this.txt_user.Size = new System.Drawing.Size(100, 20);
+            this.txt_user.TabIndex = 8;
+            // 
+            // button28
+            // 
+            this.button28.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button28.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button28.Location = new System.Drawing.Point(598, 554);
+            this.button28.Name = "button28";
+            this.button28.Size = new System.Drawing.Size(124, 64);
+            this.button28.TabIndex = 7;
+            this.button28.Text = "LOAD PRESET";
+            this.button28.UseVisualStyleBackColor = true;
+            this.button28.Click += new System.EventHandler(this.Button28_Click);
+            // 
+            // button27
+            // 
+            this.button27.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button27.Location = new System.Drawing.Point(598, 484);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(124, 64);
+            this.button27.TabIndex = 6;
+            this.button27.Text = "SAVE AND COMPILE";
+            this.button27.UseVisualStyleBackColor = true;
+            this.button27.Click += new System.EventHandler(this.Button27_Click);
+            // 
+            // button26
+            // 
+            this.button26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button26.Location = new System.Drawing.Point(598, 418);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(124, 60);
+            this.button26.TabIndex = 5;
+            this.button26.Text = "Menu calibration";
+            this.button26.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(7, 78);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(137, 13);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Exceptions from above link:";
+            // 
+            // txt_excCharts
+            // 
+            this.txt_excCharts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_excCharts.Location = new System.Drawing.Point(10, 94);
+            this.txt_excCharts.Multiline = true;
+            this.txt_excCharts.Name = "txt_excCharts";
+            this.txt_excCharts.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txt_excCharts.Size = new System.Drawing.Size(582, 524);
+            this.txt_excCharts.TabIndex = 2;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(7, 22);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(563, 26);
+            this.label8.TabIndex = 1;
+            this.label8.Text = resources.GetString("label8.Text");
+            // 
+            // txt_dbmain
+            // 
+            this.txt_dbmain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_dbmain.Location = new System.Drawing.Point(10, 50);
+            this.txt_dbmain.Name = "txt_dbmain";
+            this.txt_dbmain.Size = new System.Drawing.Size(582, 20);
+            this.txt_dbmain.TabIndex = 0;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(393, 35);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(323, 247);
+            this.label10.TabIndex = 4;
+            this.label10.Text = resources.GetString("label10.Text");
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.txt_ivao);
+            this.groupBox7.Location = new System.Drawing.Point(7, 539);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(464, 110);
+            this.groupBox7.TabIndex = 2;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "IVAO traffic Web link (whole link):";
+            // 
+            // txt_ivao
+            // 
+            this.txt_ivao.Location = new System.Drawing.Point(6, 20);
+            this.txt_ivao.Multiline = true;
+            this.txt_ivao.Name = "txt_ivao";
+            this.txt_ivao.Size = new System.Drawing.Size(452, 84);
+            this.txt_ivao.TabIndex = 0;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.txt_vatsim);
+            this.groupBox6.Location = new System.Drawing.Point(6, 423);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(464, 110);
+            this.groupBox6.TabIndex = 3;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "VATSIM traffic Web link (whole link):";
+            // 
+            // txt_vatsim
+            // 
+            this.txt_vatsim.Location = new System.Drawing.Point(6, 20);
+            this.txt_vatsim.Multiline = true;
+            this.txt_vatsim.Name = "txt_vatsim";
+            this.txt_vatsim.Size = new System.Drawing.Size(452, 84);
+            this.txt_vatsim.TabIndex = 0;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.txt_filefp);
+            this.groupBox5.Location = new System.Drawing.Point(7, 338);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(464, 79);
+            this.groupBox5.TabIndex = 2;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "File Flight Plan Web link (whole link):";
+            // 
+            // txt_filefp
+            // 
+            this.txt_filefp.Location = new System.Drawing.Point(6, 20);
+            this.txt_filefp.Multiline = true;
+            this.txt_filefp.Name = "txt_filefp";
+            this.txt_filefp.Size = new System.Drawing.Size(452, 53);
+            this.txt_filefp.TabIndex = 0;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.txt_aip);
+            this.groupBox4.Location = new System.Drawing.Point(7, 222);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(464, 110);
+            this.groupBox4.TabIndex = 1;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "AIP page Web link (whole link):";
+            // 
+            // txt_aip
+            // 
+            this.txt_aip.Location = new System.Drawing.Point(6, 20);
+            this.txt_aip.Multiline = true;
+            this.txt_aip.Name = "txt_aip";
+            this.txt_aip.Size = new System.Drawing.Size(452, 84);
+            this.txt_aip.TabIndex = 0;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.txt_genLink);
+            this.groupBox3.Controls.Add(this.btn_web);
+            this.groupBox3.Controls.Add(this.btn_pdf);
+            this.groupBox3.Location = new System.Drawing.Point(7, 25);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(464, 191);
+            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Loadsheet and Flight Plan Settings";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(166, 21);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(277, 26);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Flight Plan Online Generator web link to use with WEB \r\nfunction in green (use wh" +
+    "ole link eg. http://google.com/):";
+            // 
+            // txt_genLink
+            // 
+            this.txt_genLink.Location = new System.Drawing.Point(166, 50);
+            this.txt_genLink.Multiline = true;
+            this.txt_genLink.Name = "txt_genLink";
+            this.txt_genLink.Size = new System.Drawing.Size(292, 129);
+            this.txt_genLink.TabIndex = 2;
+            // 
+            // btn_web
+            // 
+            this.btn_web.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.btn_web.Location = new System.Drawing.Point(6, 103);
+            this.btn_web.Name = "btn_web";
+            this.btn_web.Size = new System.Drawing.Size(154, 76);
+            this.btn_web.TabIndex = 1;
+            this.btn_web.Text = "Select WEB function";
+            this.btn_web.UseVisualStyleBackColor = true;
+            this.btn_web.Click += new System.EventHandler(this.Btn_web_Click);
+            // 
+            // btn_pdf
+            // 
+            this.btn_pdf.BackColor = System.Drawing.Color.Green;
+            this.btn_pdf.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btn_pdf.Location = new System.Drawing.Point(6, 21);
+            this.btn_pdf.Name = "btn_pdf";
+            this.btn_pdf.Size = new System.Drawing.Size(154, 76);
+            this.btn_pdf.TabIndex = 0;
+            this.btn_pdf.Text = "Select PDF function";
+            this.btn_pdf.UseVisualStyleBackColor = false;
+            this.btn_pdf.Click += new System.EventHandler(this.Btn_pdf_Click);
             // 
             // tmr_time
             // 
@@ -981,6 +1327,11 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
+            // openFileDialog2
+            // 
+            this.openFileDialog2.FileName = "openFileDialog2";
+            this.openFileDialog2.Filter = "FDMU config files (*.cfg)|*.cfg";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -993,8 +1344,9 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimumSize = new System.Drawing.Size(1364, 726);
             this.Name = "Form1";
-            this.Text = "FPCCVU";
+            this.Text = "Flight Data Management Unit";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.dataPanel.ResumeLayout(false);
             this.dataPanel.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -1011,8 +1363,9 @@
             this.chcstm.ResumeLayout(false);
             this.chcstm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pdf_chcstm)).EndInit();
-            this.loadsheet.ResumeLayout(false);
+            this.loadsheetpdf.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pdf_loadsheet)).EndInit();
+            this.loadsheetweb.ResumeLayout(false);
             this.vatsimtfc.ResumeLayout(false);
             this.metardep.ResumeLayout(false);
             this.metardep.PerformLayout();
@@ -1022,6 +1375,19 @@
             this.metarcstm.PerformLayout();
             this.atis.ResumeLayout(false);
             this.atis.PerformLayout();
+            this.settings.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1047,7 +1413,7 @@
         private System.Windows.Forms.TabPage chdep;
         private System.Windows.Forms.TabPage charr;
         private System.Windows.Forms.TabPage chcstm;
-        private System.Windows.Forms.TabPage loadsheet;
+        private System.Windows.Forms.TabPage loadsheetpdf;
         private System.Windows.Forms.TabPage rtemap;
         private System.Windows.Forms.TabPage vatsimtfc;
         private System.Windows.Forms.TabPage ivaotfc;
@@ -1089,7 +1455,7 @@
         private System.Windows.Forms.Button button24;
         private AxAcroPDFLib.AxAcroPDF pdf_loadsheet;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private Awesomium.Windows.Forms.WebControl webControl1;
+        private Awesomium.Windows.Forms.WebControl vtsmWeb;
         private System.Windows.Forms.TabPage atis;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button25;
@@ -1101,6 +1467,35 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btn_print;
+        private System.Windows.Forms.TabPage settings;
+        private System.Windows.Forms.TabPage loadsheetweb;
+        private Awesomium.Windows.Forms.WebControl loadsheetwebSite;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txt_genLink;
+        private System.Windows.Forms.Button btn_web;
+        private System.Windows.Forms.Button btn_pdf;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txt_dbmain;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.TextBox txt_ivao;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.TextBox txt_vatsim;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox txt_filefp;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox txt_aip;
+        private System.Windows.Forms.Button button28;
+        private System.Windows.Forms.Button button27;
+        private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txt_excCharts;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txt_password;
+        private System.Windows.Forms.TextBox txt_user;
+        private System.Windows.Forms.OpenFileDialog openFileDialog2;
     }
 }
 
